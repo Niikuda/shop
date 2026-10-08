@@ -2,6 +2,8 @@
 include_once('conf.php');
 // include_once( DIR_BLOCKS . 'phones.php');
 echo PAGE_HEAD;
+
+
 ?>
 <title>Home</title>
 </head>
@@ -12,7 +14,7 @@ echo PAGE_HEAD;
     include_once(DIR_BLOCKS . 'nav.php');
     // echo $_SESSION["login"];
 
-    
+
     ?>
 
     <main>
