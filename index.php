@@ -11,6 +11,8 @@ echo PAGE_HEAD;
     // echo $_SESSION['user_role'];
     include_once(DIR_BLOCKS . 'nav.php');
     // echo $_SESSION["login"];
+
+    
     ?>
 
     <main>
