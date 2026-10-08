@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+}
+
+main {
+    margin: 20px;
+    min-height: calc(96vh - 131px);
+    padding-top: 1px;
+}
+
+a{
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contacts-container {
+    display: flex;
+    align-items: center;
+}
+
+form,
+input,
+select,
+option,
+button {
+    font-size: 15px;
+}
+
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 15px);
+    padding-left: var(--bs-gutter-x, 15px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.contacts-section {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+.contacts-left {
+    /* background-color: rgb(19, 19, 19);
+    color: #fff; */
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 20px 40px 20px 40px;
+}
+.contacts-left h5 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+.contacts-left .contacts-p-e-a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.contacts-left img {
+    width: 20px;
+}
+.contacts-left div {
+    padding: 8px 20px;
+}
+
+
+
+.contacts-right {
+    text-align: center;
+    background-color: #fff;
+
+    /* font-size: 18px; */
+    padding: 20px 40px 20px 40px;
+}
+.contacts-right h5 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+.contacts-section form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 193.5px;
+}
+.form-contacts-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+.form-contacts-group input{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    background-color: #e7e7e7;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.contacts-right textarea {
+    height: 145px;
+    margin-bottom: 20px;
+    background-color: #e7e7e7;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.contacts-right button {
+    height: 60px;
+    padding: 0 50px;
+    font-weight: 500;
+    border: none;
+}
