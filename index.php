@@ -32,25 +32,43 @@ echo PAGE_HEAD;
             <input name="fio" type="text">
             <button type="submit">Отсортировать</button>
         </form> -->
+                <form id="search-form" action="" method="GET">
+                    <input type="text" name="search" placeholder="Название телефона">
+                    <button type="submit">Найти</button>
+                </form>
+
                 <h1>Товары</h1>
+
                 <div id="product-list">
                     <?php
-                    $q_prods = DBQuery(" SELECT * FROM `products` ");
-                    while ($prod = mysqli_fetch_assoc($q_prods)) {
-                        echo '<div class="product">
-                <a href="product.php?id=' . $prod['id'] . ' "> <h2> ' . $prod['model'] . ' </h2> </a>';
-                        echo '<div class="product_img_label">
-                    <img src="' . URL_UPLOADS . $prod['img'] . '"alt="' . $prod['model'] . '"class="img1">
-                     </div>';
+                        $search = $_GET['search'];
+                        // echo $search;
+                        if ($search == '') {
+                            $q_prods = DBQuery("SELECT * FROM products");
+                        } else {
+                            $q_prods = DBQuery("SELECT * FROM products WHERE model LIKE '%$search%'");
+                        }
+                        $found = false;
+                        // $q_prods = DBQuery(" SELECT * FROM `products` ");
+                        while ($prod = mysqli_fetch_assoc($q_prods)) {
+                            $found = true;
+                            echo '<div class="product">
+                        <a href="product.php?id=' . $prod['id'] . ' "> <h2> ' . $prod['model'] . ' </h2> </a>';
+                            echo '<div class="product_img_label">
+                        <img src="' . URL_UPLOADS . $prod['img'] . '"alt="' . $prod['model'] . '"class="img1">
+                        </div>';
 
 
 
-                        echo '<div class="price_buy" data-id="' . $prod['id'] . '">
-                    <h5><b>Цена</b>:' . $prod['price'] . '$</h5>
-                    <button class="buy_product" type="submit" name="buy_product">Купить</button>
-                    </div>';
-                        echo '</div>';
-                    }
+                            echo '<div class="price_buy" data-id="' . $prod['id'] . '">
+                        <h5><b>Цена</b>:' . $prod['price'] . '$</h5>
+                        <button class="buy_product" type="submit" name="buy_product">Купить</button>
+                        </div>';
+                            echo '</div>';
+                        }
+                        if ($found == false) {
+                            echo "Товары не найдены";
+                        }
                     ?>
                 </div>
             </div>
